@@ -66,3 +66,104 @@
 3. 이진검색과 비슷한 방식으로 logN 수준으로 검색할 수 있습니다.
 4. 노드를 삽입하기 쉽습니다.
 ```
+
+## 배열로 트리 구현
+
+---
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/464f9f97-9358-4c41-be47-0e6717ae78a0/8ca2e9db-1133-4af4-80df-d4bd7a726896/Untitled.png)
+
+이진트리를 배열로 표현할 수 있습니다. 부모노드와 자식노드는 다음의 인덱스 관계를 갖습니다.
+
+### [배열활용] 부모노드와 자식노드의 인덱스 관계
+
+```
+부모노드의 인덱스: n
+자식노드의 인덱스: 2*n + 1, 2*n + 2
+```
+
+### [배열활용] 부모-자식 노드의 관계 표현
+
+```python
+my_tree = ['A','B','C','D','E','F',None,'G']
+
+i = 0
+
+n = len(my_tree)
+
+while i < n:
+    if my_tree[i]:
+        print(f"Parent: {my_tree[i]}", end=', ')
+        left = 2 * i + 1
+        right = 2 * i + 2
+        if left < n and my_tree[left] is not None:
+            print(f"Left: {my_tree[left]}", end=', ')
+        if  right < n and my_tree[right] is not None:
+            print(f"Right: {my_tree[right]}", end=', ')
+        print()
+    i += 1
+
+```
+
+### [배열활용] 자식노드의 부모노드 찾기
+
+```python
+def find_parent(child: Any ,tree: list) -> None:
+    child_idx = tree.index(child)
+    parent_idx = 0
+    if child_idx % 2 == 1:
+        parent_idx = (child_idx - 1) // 2
+    else:
+        parent_idx = (child_idx - 2) // 2
+    print(f"Parent of {child}: {tree[parent_idx]}")
+
+```
+
+### [배열활용] 전위순회
+
+```python
+def pre_order(tree: Any, i = 0) -> None:
+    """트리의 전위순회"""
+    if i < len(tree):
+        print(tree[i], end = ' ')
+        left = 2 * i + 1
+        right = 2 * i + 2
+        if left < len(tree) and tree[left] is not None:
+            pre_order(tree, left)
+        if right < len(tree) and tree[right] is not None:
+            pre_order(tree, right)
+```
+
+### [배열활용] 중위순회
+
+```python
+def in_order(tree: Any, i = 0) -> None:
+    """트리의 중위순회"""
+    if i < len(tree):
+        left = 2 * i + 1
+        right = 2 * i + 2
+        if left < len(tree) and tree[left] is not None:
+            in_order(tree, left)
+        print(tree[i], end = ' ')
+        if right < len(tree) and tree[right] is not None:
+            in_order(tree, right)
+```
+
+### [배열활용] 후위순회
+
+```python
+def post_order(tree: Any, i = 0) -> None:
+    """트리의 후위순회"""
+    if i < len(tree):
+        left = 2 * i + 1
+        right = 2 * i + 2
+        if left < len(tree) and tree[left] is not None:
+            post_order(tree, left)
+        if right < len(tree) and tree[right] is not None:
+            post_order(tree, right)
+        print(tree[i], end = ' ')
+```
+
+## 연결리스트로 구현
+
+---
