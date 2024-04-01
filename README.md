@@ -20,3 +20,5 @@
 [파이썬 알고리즘 인터뷰](https://product.kyobobook.co.kr/detail/S000001932748)
 
 [Roadmap - Data Structures and Algorithms Roadmap](https://roadmap.sh/datastructures-and-algorithms)
+
+[이것이 취업을 위한 코딩테스트다 with 파이썬](https://m.yes24.com/Goods/Detail/91433923)
