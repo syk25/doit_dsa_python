@@ -1,0 +1,1 @@
+{"name":"Local: playground","url":"/Users/syk25/swdev/doit/doit_dsa_python/playground.py","tests":[{"id":1712462082140,"input":"The Curious Case of Benjamin Button","output":"6"},{"id":1712463590215,"input":"","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/syk25/swdev/doit/doit_dsa_python/playground.py","group":"local","local":true}
