@@ -1,0 +1,1 @@
+{"name":"Local: playground","url":"/Users/syk25/swdev/doit/doit_dsa_python/playground.py","tests":[{"id":1712660745325,"input":"6\n10 20 10 30 20 50","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/syk25/swdev/doit/doit_dsa_python/playground.py","group":"local","local":true}
